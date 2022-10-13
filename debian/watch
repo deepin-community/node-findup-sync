@@ -1,0 +1,2 @@
+version=3
+https://github.com/js-cli/node-findup-sync/tags .*/archive/v?(\d[\d\.]+).tar.gz

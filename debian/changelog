@@ -1,0 +1,74 @@
+node-findup-sync (4.0.0-3) unstable; urgency=medium
+
+  * Team upload
+  * Fix test when using pkg-js-tools ≥ 0.9.33 (Closes: #959614)
+  * Declare compliance with policy 4.5.0
+  * Update lintian overrides
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 03 May 2020 16:20:39 +0200
+
+node-findup-sync (4.0.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Back to unstable after successful tests
+  * Update description
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 31 Dec 2019 20:49:30 +0100
+
+node-findup-sync (4.0.0-1) experimental; urgency=medium
+
+  * Team upload
+
+  [ Paolo Greppi ]
+  * Update Vcs fields for migration to https://salsa.debian.org/
+
+  [ Jelmer Vernooĳ ]
+  * Trim trailing whitespace.
+
+  [ Xavier Guimard ]
+  * Bump debhelper compatibility level to 12
+  * Declare compliance with policy 4.4.1
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+  * Fix debian copyright format
+  * New upstream version 4.0.0
+  * Update dependencies versions
+  * Embed some little modules for test only
+  * Refresh patch
+  * Adapt test to our environment
+  * Update build dependencies: add node-define-properties, node-findup-sync,
+    node-function-bind, node-isarray, node-is-glob, node-normalize-path,
+    node-object-inspect, node-resolve and node-tmatch
+  * Update copyright
+  * Use pkg-js-tools auto install
+  * Don't install test files as examples
+  * Add lintian overrides
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 30 Dec 2019 21:04:35 +0100
+
+node-findup-sync (0.4.3-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+
+ -- Sruthi Chandran <srud@disroot.org>  Wed, 09 Nov 2016 14:47:38 +0530
+
+node-findup-sync (0.1.3-2) unstable; urgency=low
+
+  * Team upload.
+
+  * Bump the Standards-Version to the current one on unstable
+  * Fix wrapped short description (Closes: #781388)
+    also make it more compliant with other Node.js modules
+  * Fix debian/watch file to point to the new location
+  * Update the Vcs-Browser link: gitweb to git and use https
+  * Update the Vcs-Git link to use the https protocol
+
+ -- Paolo Greppi <paolo.greppi@libpf.com>  Tue, 01 Nov 2016 13:49:51 +0100
+
+node-findup-sync (0.1.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #743160)
+
+ -- Matthew Pideil <matthewp_debian@teledetection.fr>  Sun, 30 Mar 2014 17:05:46 +0000

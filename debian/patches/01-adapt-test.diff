@@ -1,0 +1,93 @@
+Description: modify test to match our installation
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2019-12-30
+
+--- a/test/test.js
++++ b/test/test.js
+@@ -113,13 +113,13 @@
+   });
+ 
+   it('should support normal (non-glob) file paths:', function(done) {
+-    var normPath = normalize(findup('package.json', { cwd: path.dirname(resolve.sync('normalize-path')) }));
+-    expect(normPath).toEqual('node_modules/normalize-path/package.json');
++    var normPath = normalize(findup('package.json', { cwd: path.dirname(resolve.sync('is-callable')) }));
++    expect(normPath).toEqual('node_modules/is-callable/package.json');
+ 
+-    var isGlob = normalize(findup('package.json', { cwd: path.dirname(resolve.sync('is-glob')) }));
+-    expect(isGlob).toEqual('node_modules/is-glob/package.json');
++    var isGlob = normalize(findup('package.json', { cwd: path.dirname(resolve.sync('is-map')) }));
++    expect(isGlob).toEqual('node_modules/is-map/package.json');
+ 
+-    cwd = path.dirname(resolve.sync('normalize-path'));
++    cwd = path.dirname(resolve.sync('is-arguments'));
+     var actual = findup('package.json', { cwd: cwd });
+     expect(actual).toHaveDirname(cwd);
+     expect(actual).toHaveBasename('package.json');
+@@ -128,7 +128,7 @@
+     expect(actual).toHaveBasename('package.json');
+     expect(actual).toHaveDirname('test/fixtures/a/b/c');
+ 
+-    cwd = path.dirname(resolve.sync('is-glob'));
++    cwd = path.dirname(resolve.sync('is-map'));
+     actual = findup('package.json', { cwd: cwd });
+     expect(actual).toHaveDirname(cwd);
+     expect(actual).toHaveBasename('package.json');
+@@ -147,8 +147,8 @@
+     expect(normalize(findup('**/one.txt', { cwd: 'test/fixtures/a/b/c/d/e/f/g' }))).toEqual('test/fixtures/a/b/c/d/one.txt');
+     expect(normalize(findup('**/two.txt', { cwd: 'test/fixtures/a/b/c/d/e/f/g' }))).toEqual('test/fixtures/a/b/c/two.txt');
+ 
+-    var pkg = normalize(findup('p*.json', { cwd: npm('micromatch') }));
+-    expect(pkg).toEqual('node_modules/micromatch/package.json');
++    var pkg = normalize(findup('p*.json', { cwd: npm('is-string') }));
++    expect(pkg).toEqual('node_modules/is-string/package.json');
+ 
+     var opts = { cwd: 'test/fixtures/a/b/c/d/e/f/g' };
+ 
+@@ -168,7 +168,7 @@
+     expect(actual).toHaveDirname('test/fixtures/a/b/c');
+     expect(actual).toHaveBasename('two.txt');
+ 
+-    cwd = npm('is-glob');
++    cwd = npm('is-map');
+     actual = findup('p*.json', { cwd: cwd });
+     expect(actual).toHaveDirname(cwd);
+     expect(actual).toHaveBasename('package.json');
+@@ -229,14 +229,14 @@
+     actual = findup(['lslsl', '**/blah.txt'], opts);
+     expect(actual === null).toExist();
+ 
+-    cwd = npm('is-glob');
++    cwd = npm('is-map');
+     actual = findup(['lslsl', 'p*.json'], { cwd: cwd });
+     expect(actual).toHaveDirname(cwd);
+     expect(actual).toHaveBasename('package.json');
+     done();
+   });
+ 
+-  it('should support micromatch `matchBase` option:', function(done) {
++  it('should support is-string `matchBase` option:', function(done) {
+     var opts = { matchBase: true, cwd: 'test/fixtures/a/b/c/d/e/f/g' };
+     expect(normalize(findup('package.json', opts))).toEqual('test/fixtures/a/b/c/d/e/f/g/package.json');
+     expect(normalize(findup('one.txt', opts))).toEqual('test/fixtures/a/b/c/d/one.txt');
+@@ -257,9 +257,9 @@
+   });
+ 
+   it('should return `null` when no files are found:', function(done) {
+-    var dep = normalize(findup('*.foo', { cwd: path.dirname(resolve.sync('micromatch')) }));
++    var dep = normalize(findup('*.foo', { cwd: path.dirname(resolve.sync('is-string')) }));
+     expect(dep).toEqual(null);
+-    expect(findup('**/b*.json', { cwd: npm('is-glob') })).toEqual(null);
++    expect(findup('**/b*.json', { cwd: npm('is-map') })).toEqual(null);
+     expect(findup('foo.json', { cwd: 'test/fixtures/a/b/c/d/e/f/g' })).toEqual(null);
+     expect(findup('foo.json', { cwd: 'test/fixtures/a/b/c/d/e/f/g', matchBase: true })).toEqual(null);
+     done();
+@@ -273,7 +273,7 @@
+     done();
+   });
+ 
+-  it('should support micromatch `nocase` option:', function(done) {
++  it('should support is-string `nocase` option:', function(done) {
+     actual = findup('ONE.*', { cwd: 'test/fixtures/a/b/c/d' });
+     expect(actual).toHaveBasename('ONE.txt');
+     expect(actual).toHaveDirname('test/fixtures/a/b/c');
