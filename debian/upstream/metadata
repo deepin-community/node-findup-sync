@@ -1,5 +1,6 @@
 ---
 Archive: GitHub
-Bug-Database: https://github.com/cowboy/node-findup-sync/issues
+Bug-Database: https://github.com/gulpjs/findup-sync/issues
+Bug-Submit: https://github.com/gulpjs/findup-sync/issues/new
 Repository: https://github.com/cowboy/node-findup-sync.git
-Repository-Browse: https://github.com/cowboy/node-findup-sync
+Repository-Browse: https://github.com/gulpjs/findup-sync
