@@ -1,3 +1,30 @@
+node-findup-sync (4.0.0-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Update lintian override info format in d/source/lintian-overrides on line 2-4.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 21 Nov 2022 01:39:43 +0000
+
+node-findup-sync (4.0.0-4) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove constraints unnecessary since buster
+
+  [ Yadd ]
+  * Update watch file format version to 4
+  * Bump debhelper compatibility level to 13
+  * Fix GitHub tags regex
+  * Use dh-sequence-nodejs
+  * Update standards version to 4.6.0, no changes needed
+  * Drop dependency to nodejs
+
+ -- Yadd <yadd@debian.org>  Sun, 21 Nov 2021 22:44:16 +0100
+
 node-findup-sync (4.0.0-3) unstable; urgency=medium
 
   * Team upload
